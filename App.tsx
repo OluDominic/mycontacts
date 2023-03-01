@@ -1,20 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
+import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView, StatusBar, Text} from 'react-native';
+import AppNavContainer from './src/navigations';
 
 function App(): JSX.Element {
-  return (
-    <SafeAreaView>
-      <StatusBar barStyle="dark-content" />
-      <Text>Hello World</Text>
-    </SafeAreaView>
-  );
+  return <AppNavContainer></AppNavContainer>;
 }
 
 export default App;
