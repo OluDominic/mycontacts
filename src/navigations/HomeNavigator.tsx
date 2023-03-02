@@ -17,14 +17,10 @@ const HomeNavigator = () => {
   const HomeStack = createStackNavigator();
   return (
     <HomeStack.Navigator initialRouteName={CONTACT_LIST}>
-      <HomeStack.Screen name="Contact" component={Contacts}></HomeStack.Screen>
-      <HomeStack.Screen
-        name={CONTACT_DETAIL}
-        component={ContactDetail}></HomeStack.Screen>
-      <HomeStack.Screen
-        name={CREATE_CONTACT}
-        component={CreateContact}></HomeStack.Screen>
-      <HomeStack.Screen name={SETTINGS} component={Settings}></HomeStack.Screen>
+      <HomeStack.Screen name="Contact" component={Contacts} />
+      <HomeStack.Screen name={CONTACT_DETAIL} component={ContactDetail} />
+      <HomeStack.Screen name={CREATE_CONTACT} component={CreateContact} />
+      <HomeStack.Screen name={SETTINGS} component={Settings} />
     </HomeStack.Navigator>
   );
 };
