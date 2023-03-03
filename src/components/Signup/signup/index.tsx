@@ -85,7 +85,7 @@ const RegisterComponent = ({form, errors, onChange, onSubmit}: Props) => {
             secureTextEntry={true}
             error={errors.password}
           />
-          <CustomButton onPress={onSubmit} title="Click Me" primary />
+          <CustomButton onPress={onSubmit} title="REGISTER" primary />
           <View style={styles.createSection}>
             <Text style={styles.infoText}>Already have an account?</Text>
             <TouchableOpacity

@@ -1,14 +1,27 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import RegisterComponent from '../../components/Signup/signup';
-
+import envs from './../../config/env';
+import axiosInstance from '../../helpers/axiosInterceptor';
+import {DrawerItem} from '@react-navigation/drawer';
 interface Props {
   name: string;
   value: object;
 }
 
 const Register = () => {
-  const [form, setForm] = useState<object>({});
+  const [form, setForm] = useState<any>({});
   const [errors, setErrors] = useState<object>({});
+
+  //const {BACKEND_URL} = envs;
+
+  // console.log('Backend_url :>> ', BACKEND_URL);
+  // console.log('form :>> ', form);
+
+  // useEffect(() => {
+  //   axiosInstance.post('/contacts').catch(err => {
+  //     console.log('err :', err);
+  //   });
+  // }, []);
 
   const onChange = ({name, value}: Props) => {
     setForm({...form, [name]: value});
@@ -66,6 +79,14 @@ const Register = () => {
       setErrors(prev => {
         return {...prev, password: 'Please add a password'};
       });
+    }
+
+    if (
+      Object.values(form).length === 5 &&
+      Object.values(form).every(item => item.trim().length > 0) &&
+      Object.values(errors).every(item => !item)
+    ) {
+      console.log('11111', 11111);
     }
   };
   return (
